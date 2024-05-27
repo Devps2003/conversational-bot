@@ -39,7 +39,7 @@ def get_vector_store(text_chunks):
     chunk_embeddings = embeddings.embed_documents(text_chunks)
 
     # Create an instance of Pinecone
-    pc = pinecone.Pinecone(api_key="4db3677a-d6bd-4829-aae8-9fc15b2a58cf")
+    pc = pinecone.Pinecone(api_key=st.secrets["PINECONE_API_KEY"])
 
     # Create an index
     index_name = "botttt"
