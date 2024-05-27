@@ -4,18 +4,20 @@ import streamlit as st
 import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+# # Load environment variables
+# load_dotenv()
+# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 
-# Configure Google Generative AI
-genai.configure(api_key=GOOGLE_API_KEY)
+# # Configure Google Generative AI
+# genai.configure(api_key=GOOGLE_API_KEY)
 
-# Create an instance of Pinecone
-pc = pinecone.Pinecone(api_key=PINECONE_API_KEY)
+# # Create an instance of Pinecone
+# pc = pinecone.Pinecone(api_key=PINECONE_API_KEY)
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+pc = pinecone.Pinecone(api_key=st.secrets["PINECONE_API_KEY"])
 
 
 # Load the SentenceTransformer model
