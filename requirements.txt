@@ -1,4 +1,7 @@
 langchain
+langchain-community
+google-generativeai
+langchain_google_genai
 streamlit
 streamlit-chat
 sentence-transformers
